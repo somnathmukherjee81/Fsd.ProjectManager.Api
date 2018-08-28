@@ -1,0 +1,8 @@
+version: '3'
+
+services:
+  task-manager-api:
+    image: task-manager-api
+    build:
+      context: ./task-manager-api
+      dockerfile: Dockerfile

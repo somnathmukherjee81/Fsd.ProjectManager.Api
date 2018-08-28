@@ -1,0 +1,50 @@
+apiVersion: apps/v1beta1
+kind: Deployment
+metadata:
+  name: task-manager-api
+spec:
+  revisionHistoryLimit: 14
+  strategy:
+    type: RollingUpdate 
+    rollingUpdate: 
+      maxSurge: 100%  
+      maxUnavailable: 0  
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: task-manager-api
+    spec:
+      containers:
+      - name: task-manager-api
+        image: $ACR_DNS/$IMAGE_NAME
+        imagePullPolicy: Always         
+        ports:
+        - containerPort: 8081
+        volumeMounts:
+        - name: sp-star-ssl-certs
+          mountPath: "/etc/secret-volume"
+          readOnly: true
+        envFrom:
+        - configMapRef:
+           name: task-manager-api
+        - secretRef:
+           name: task-manager-api
+      volumes:
+      - name: sp-star-ssl-certs
+        secret:
+          secretName: sp-star-ssl-certs
+      imagePullSecrets:
+        - name: fsdcapsuleregistry-secret
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: task-manager-api
+spec:
+  ports:
+  - port: 443
+    targetPort: 8081
+    name: https
+  selector:
+    app: task-manager-api

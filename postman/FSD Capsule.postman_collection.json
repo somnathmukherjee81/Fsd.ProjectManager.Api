@@ -1,0 +1,221 @@
+{
+	"variables": [],
+	"info": {
+		"name": "FSD Capsule",
+		"_postman_id": "8a8608ce-b78c-d5db-f043-ef04ceea4d9b",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "fsd-capsule-task-manager",
+			"description": "",
+			"item": [
+				{
+					"name": "Get All Tasks",
+					"request": {
+						"url": {
+							"raw": "{{channel-service-fare-rules}}/farequoterules/?componentNumber=1&categoryNumber=16",
+							"host": [
+								"{{channel-service-fare-rules}}"
+							],
+							"path": [
+								"farequoterules",
+								""
+							],
+							"query": [
+								{
+									"key": "componentNumber",
+									"value": "1",
+									"equals": true,
+									"description": ""
+								},
+								{
+									"key": "categoryNumber",
+									"value": "16",
+									"equals": true,
+									"description": ""
+								}
+							],
+							"variable": []
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "GTIDHOST",
+								"value": "1G-2EF1C3",
+								"description": ""
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							},
+							{
+								"key": "INTERACTIONID",
+								"value": "4adb4ca9-3314-4433-88cb-9e948d72e0b9",
+								"description": ""
+							},
+							{
+								"key": "EMULATEPCC",
+								"value": "1AX",
+								"description": "",
+								"disabled": true
+							},
+							{
+								"key": "Accept-Encoding",
+								"value": "gzip",
+								"description": "",
+								"disabled": true
+							},
+							{
+								"key": "GTIDHOST",
+								"value": "1V-FFA3A9",
+								"description": "",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"Origin\": {\r\n    \"Code\": \"WLG\"\r\n  },\r\n  \"Destination\": {\r\n    \"Code\": \"XNA\"\r\n  },\r\n  \"DepartureDate\": \"2018-03-30\"\r\n}"
+						},
+						"description": null
+					},
+					"response": []
+				},
+				{
+					"name": "Get Task By Id",
+					"request": {
+						"url": {
+							"raw": "{{channel-service-fare-rules}}/farequoterules/?componentNumber=1&categoryNumber=16",
+							"host": [
+								"{{channel-service-fare-rules}}"
+							],
+							"path": [
+								"farequoterules",
+								""
+							],
+							"query": [
+								{
+									"key": "componentNumber",
+									"value": "1",
+									"equals": true,
+									"description": ""
+								},
+								{
+									"key": "categoryNumber",
+									"value": "16",
+									"equals": true,
+									"description": ""
+								}
+							],
+							"variable": []
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "GTIDHOST",
+								"value": "1G-2EF1C3",
+								"description": ""
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							},
+							{
+								"key": "INTERACTIONID",
+								"value": "4adb4ca9-3314-4433-88cb-9e948d72e0b9",
+								"description": ""
+							},
+							{
+								"key": "EMULATEPCC",
+								"value": "1AX",
+								"description": "",
+								"disabled": true
+							},
+							{
+								"key": "Accept-Encoding",
+								"value": "gzip",
+								"description": "",
+								"disabled": true
+							},
+							{
+								"key": "GTIDHOST",
+								"value": "1V-FFA3A9",
+								"description": "",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"Origin\": {\r\n    \"Code\": \"WLG\"\r\n  },\r\n  \"Destination\": {\r\n    \"Code\": \"XNA\"\r\n  },\r\n  \"DepartureDate\": \"2018-03-30\"\r\n}"
+						},
+						"description": null
+					},
+					"response": []
+				},
+				{
+					"name": "Create Task",
+					"request": {
+						"url": "http://localhost:8080/Tasks",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"summary\": \"Create Release Definitions\",\n    \"description\": \"Create Release Definitions in Azure\",\n    \"startDate\": \"2018-07-23\",\n    \"endDate\": \"2018-07-27\",\n    \"priority\": 3,\n    \"status\": 0\n}"
+						},
+						"description": null
+					},
+					"response": []
+				},
+				{
+					"name": "Update Task",
+					"request": {
+						"url": "http://localhost:8080/Tasks",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"summary\": \"Create Release Definitions\",\n    \"description\": \"Create Release Definitions in Azure\",\n    \"startDate\": \"2018-07-23\",\n    \"endDate\": \"2018-07-27\",\n    \"priority\": 3,\n    \"status\": 0\n}"
+						},
+						"description": null
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Task",
+					"request": {
+						"url": "http://localhost:8080/Tasks",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"summary\": \"Create Release Definitions\",\n    \"description\": \"Create Release Definitions in Azure\",\n    \"startDate\": \"2018-07-23\",\n    \"endDate\": \"2018-07-27\",\n    \"priority\": 3,\n    \"status\": 0\n}"
+						},
+						"description": null
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
