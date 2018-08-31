@@ -1,8 +1,8 @@
 version: '3'
 
 services:
-  task-manager-api:
-    image: task-manager-api
+  project-manager-api:
+    image: project-manager-api
     build:
-      context: ./task-manager-api
+      context: ./project-manager-api
       dockerfile: Dockerfile
