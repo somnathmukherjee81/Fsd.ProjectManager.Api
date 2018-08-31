@@ -10,6 +10,7 @@
 namespace Fsd.ProjectManager.Api.Controllers
 {
     using System.Collections.Generic;
+    using System.Globalization;
     using System.Linq;
 
     using Exception;
@@ -98,6 +99,15 @@ namespace Fsd.ProjectManager.Api.Controllers
             }
 
             var headerInformation = new HeaderInformation(Request.Headers);
+
+            if (string.IsNullOrEmpty(user.EmployeeId) || user.EmployeeId == "-1")
+            {
+                int maxEmpId = _context.Users
+                    .Select(u => DataConversionHelper.ConvertStringToInt(u.EmployeeId, 0))
+                    .Max(empId => empId);
+
+                user.EmployeeId = (maxEmpId + 1).ToString(CultureInfo.InvariantCulture);
+            }
 
             _context.Users.Add(user);
             _context.SaveChanges();
