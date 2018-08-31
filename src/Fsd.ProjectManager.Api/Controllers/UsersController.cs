@@ -9,6 +9,7 @@
 
 namespace Fsd.ProjectManager.Api.Controllers
 {
+    using System;
     using System.Collections.Generic;
     using System.Globalization;
     using System.Linq;
@@ -49,14 +50,22 @@ namespace Fsd.ProjectManager.Api.Controllers
         /// <summary>
         /// The GET method for retrieving all users
         /// </summary>
+        /// <param name="employeeId">Employee Id to filter with</param>
         /// <returns>
         /// The json serialized list of users.
         /// </returns>
         /// <remarks>GET: /Users</remarks>
         [HttpGet(Name = "GetAllUsers")]
-        public ActionResult<IList<User>> Get()
+        public ActionResult<IList<User>> Get([FromQuery] string employeeId = null)
         {
             var headerInformation = new HeaderInformation(Request.Headers);
+
+            if (!string.IsNullOrEmpty(employeeId))
+            {
+                return _context.Users
+                    .Where(user => string.Compare(user.EmployeeId, employeeId, StringComparison.InvariantCultureIgnoreCase) == 0)
+                    .ToList();
+            }
 
             return _context.Users.ToList();
         }
