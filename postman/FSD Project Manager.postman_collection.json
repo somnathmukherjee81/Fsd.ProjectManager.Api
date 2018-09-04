@@ -53,7 +53,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"summary\": \"Create Release Definitions\",\n    \"description\": \"Create Release Definitions in Azure\",\n    \"startDate\": \"2018-07-23\",\n    \"endDate\": \"2018-07-27\",\n    \"priority\": 3,\n    \"status\": 0\n}"
+							"raw": "{\n    \"summary\": \"Test TAsk\",\n    \"description\": \"Create Release Definitions in Azure\",\n    \"startDate\": \"2018-07-23\",\n    \"endDate\": \"2018-07-27\",\n    \"priority\": \"Low\",\n    \"status\": \"NotStarted\"\n}"
 						},
 						"description": null
 					},
@@ -73,7 +73,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"summary\": \"Create Release Definitions\",\n    \"description\": \"Create Release Definitions in Microsoft Azure\",\n    \"startDate\": \"2018-07-23\",\n    \"endDate\": \"2018-07-27\",\n    \"priority\": 3,\n    \"status\": 0\n}"
+							"raw": "{\n    \"summary\": \"Create Release Definitions\",\n    \"description\": \"Create Release Definitions in Microsoft Azure\",\n    \"startDate\": \"2018-07-23\",\n    \"endDate\": \"2018-07-27\",\n    \"priority\": \"Low\",\n    \"status\": \"NotStarted\"\n}"
 						},
 						"description": null
 					},
@@ -161,7 +161,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"firstName\": \"Somnath\",\n    \"lastName\": \"Mukherjee\",\n    \"employeeId\": \"100014\",\n    \"projectId\": 1\n}"
+							"raw": "{\n    \"firstName\": \"Somnath\",\n    \"lastName\": \"Mukherjee\",\n    \"employeeId\": \"-1\"\n}"
 						},
 						"description": null
 					},
