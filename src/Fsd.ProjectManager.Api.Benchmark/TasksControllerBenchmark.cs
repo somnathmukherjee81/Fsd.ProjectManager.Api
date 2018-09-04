@@ -3,7 +3,7 @@
 //    Copyright (c) Somnath Mukherjee. All rights reserved.
 // </copyright>
 // <summary>
-//   The sample test
+//   The performance benchmark tests for Tasks Controller
 // </summary>
 // --------------------------------------------------------------------------------------------------------------------
 
@@ -34,10 +34,10 @@ namespace Fsd.ProjectManager.Api.Benchmark
         [PerfSetup]
         public void Setup(BenchmarkContext context)
         {
-            var tasks = TaskControllerTestHelper.CreateTaskList();
+            var tasks = TasksControllerTestHelper.CreateTaskList();
 
-            var mockDbSet = TaskControllerTestHelper.CreateMockTaskDbSet(tasks);
-            var mockContext = TaskControllerTestHelper.CreateMockTaskContext(mockDbSet.Object);
+            var mockDbSet = TasksControllerTestHelper.CreateMockTaskDbSet(tasks);
+            var mockContext = TasksControllerTestHelper.CreateMockTaskContext(mockDbSet.Object);
 
             _tasksController = new TasksController(mockContext.Object);
             _tasksController.ControllerContext = new ControllerContext();

@@ -3,7 +3,7 @@
 //    Copyright (c) Somnath Mukherjee. All rights reserved.
 // </copyright>
 // <summary>
-//   The sample test
+//   Helper for Tasks Controller Tests
 // </summary>
 // --------------------------------------------------------------------------------------------------------------------
 
@@ -20,7 +20,7 @@ namespace Fsd.ProjectManager.Api.Test
     /// <summary>
     /// Helper class for <see cref="TasksController"/> tests
     /// </summary>
-    public static class TaskControllerTestHelper
+    public static class TasksControllerTestHelper
     {
         /// <summary>
         /// Creates the mock task DbSet.
@@ -79,7 +79,9 @@ namespace Fsd.ProjectManager.Api.Test
                             StartDate = DateTime.Parse("2018-07-02"),
                             EndDate = DateTime.Parse("2018-07-06"),
                             Priority = Priority.High,
-                            Status = Status.NotStarted
+                            Status = Status.NotStarted,
+                            ProjectId = 1,
+                            UserId = 1
                         },
                     new Task
                         {
@@ -90,7 +92,9 @@ namespace Fsd.ProjectManager.Api.Test
                             StartDate = DateTime.Parse("2018-07-09"),
                             EndDate = DateTime.Parse("2018-07-13"),
                             Priority = Priority.High,
-                            Status = Status.NotStarted
+                            Status = Status.NotStarted,
+                            ProjectId = 1,
+                            UserId = 1
                         },
                     new Task
                         {
@@ -101,7 +105,9 @@ namespace Fsd.ProjectManager.Api.Test
                             StartDate = DateTime.Parse("2018-07-16"),
                             EndDate = DateTime.Parse("2018-07-20"),
                             Priority = Priority.High,
-                            Status = Status.NotStarted
+                            Status = Status.NotStarted,
+                            ProjectId = 1,
+                            UserId = 1
                         }
                 };
         }

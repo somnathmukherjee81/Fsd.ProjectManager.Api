@@ -130,7 +130,7 @@ namespace Fsd.ProjectManager.Api.Data
             var project = new Project
                 {
                     Summary = "The Machine",
-                    Description = "To implement a Turning <achine that can pass the Turing Test",
+                    Description = "To implement a Turning Machine that can pass the Turing Test",
                     StartDate = DateTime.Parse("2018-01-01"),
                     EndDate = DateTime.Parse("2018-12-31"),
                     Priority = Priority.High,

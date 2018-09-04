@@ -3,7 +3,7 @@
 //    Copyright (c) Somnath Mukherjee. All rights reserved.
 // </copyright>
 // <summary>
-//   The sample test
+//   Unit tests for the Tasks Controller
 // </summary>
 // --------------------------------------------------------------------------------------------------------------------
 
@@ -51,10 +51,10 @@ namespace Fsd.ProjectManager.Api.Test
         /// </summary>
         public TasksControllerTests()
         {
-            _tasks = TaskControllerTestHelper.CreateTaskList();
+            _tasks = TasksControllerTestHelper.CreateTaskList();
 
-            _mockDbSet = TaskControllerTestHelper.CreateMockTaskDbSet(_tasks);
-            _mockContext = TaskControllerTestHelper.CreateMockTaskContext(_mockDbSet.Object);
+            _mockDbSet = TasksControllerTestHelper.CreateMockTaskDbSet(_tasks);
+            _mockContext = TasksControllerTestHelper.CreateMockTaskContext(_mockDbSet.Object);
 
             _tasksController = new TasksController(_mockContext.Object);
             _tasksController.ControllerContext = new ControllerContext();
