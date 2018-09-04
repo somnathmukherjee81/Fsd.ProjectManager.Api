@@ -65,12 +65,7 @@ namespace Fsd.ProjectManager.Api.Helpers
         /// <returns>The environment value or the default value if not found.</returns>
         private static string GetValue(string key, string defaultValue)
         {
-            string result =
-            #if DEBUG
-                defaultValue;
-            #else
-                null;
-            #endif
+            string result = defaultValue;
 
             if (!string.IsNullOrEmpty(Environment.GetEnvironmentVariable(key)))
             {

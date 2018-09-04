@@ -41,6 +41,14 @@ At the root of the project run
 dotnet test
 ```
 
+### Publish the project output
+
+At the root of the project run
+
+```
+dotnet publish -c Release
+```
+
 ### Start the service
 
 From the build output location (Debug or Release folder), run
@@ -59,6 +67,9 @@ and run the image
 ```
 docker run -p 9090:9090 project-manager-api
 ```
+
+### Use the batch file to build
+You can also use the batch file `Build.bat` to build and package the project. However please note that the project is supposed to run with Kubernetes after the Kubernetes configurations are applied on the image from the `K8SConfig` directory.
 
 ## Class Diagram
 [![Class Diagram of the Project manager Api](./design/Fsd.ProjectManager.Api-Design-Class-Diagram.png)](./design/Fsd.ProjectManager.Api-Design-Class-Diagram.png)
