@@ -252,6 +252,7 @@ DELETE https://project-manager-api.fsd-project-manager-dev.com/Users/{id}
         "userId": 1,
         "firstName": "Alan",
         "lastName": "Turiing",
+        "fullName": "Turiing, Alan",
         "employeeId": "100000",
         "projectId": 1,
         "timestamp": "AAAAAAAAB+A="
@@ -262,6 +263,7 @@ DELETE https://project-manager-api.fsd-project-manager-dev.com/Users/{id}
         "userId": 19,
         "firstName": "Somnath",
         "lastName": "Mukherjee",
+        "fullName": "Mukherjee, Somnath",
         "employeeId": "100015",
         "projectId": 1,
         "timestamp": "AAAAAAAAhNM="
@@ -352,6 +354,8 @@ DELETE https://project-manager-api.fsd-project-manager-dev.com/Project/{id}
         "priority": "High",
         "status": "InProgress",
         "managerId": 14,
+        "numberOfTasks": 0,
+        "numberOfCompletedTasks": 0,
         "timestamp": "AAAAAAAANrU="
     },
     {
@@ -364,6 +368,8 @@ DELETE https://project-manager-api.fsd-project-manager-dev.com/Project/{id}
         "priority": "Low",
         "status": "NotStarted",
         "managerId": 16,
+        "numberOfTasks": 0,
+        "numberOfCompletedTasks": 0,
         "timestamp": "AAAAAAAANrY="
     }
 ]
