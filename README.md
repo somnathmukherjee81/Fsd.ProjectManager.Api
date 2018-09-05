@@ -69,7 +69,7 @@ docker run -p 9090:9090 project-manager-api
 ```
 
 ### Use the batch file to build
-You can also use the batch file `Build.bat` to build and package the project. However please note that the project is supposed to run with Kubernetes after the Kubernetes configurations are applied on the image from the `K8SConfig` directory.
+You can also use the batch file `Build.bat` to build and package the project. However please note that the project is supposed to run in Kubernetes after the Kubernetes configurations and environment variables from the `K8SConfig` directory are applied.
 
 ## Class Diagram
 [![Class Diagram of the Project manager Api](./design/Fsd.ProjectManager.Api-Design-Class-Diagram.png)](./design/Fsd.ProjectManager.Api-Design-Class-Diagram.png)
