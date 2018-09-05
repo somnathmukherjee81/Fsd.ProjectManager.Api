@@ -242,6 +242,20 @@
 					"response": []
 				},
 				{
+					"name": "Get Tasks By Project Id",
+					"request": {
+						"url": "http://localhost:9090/Projects/1",
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"Origin\": {\r\n    \"Code\": \"WLG\"\r\n  },\r\n  \"Destination\": {\r\n    \"Code\": \"XNA\"\r\n  },\r\n  \"DepartureDate\": \"2018-03-30\"\r\n}"
+						},
+						"description": null
+					},
+					"response": []
+				},
+				{
 					"name": "Create Project",
 					"request": {
 						"url": "http://localhost:9090/Projects",

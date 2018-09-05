@@ -87,6 +87,15 @@ GET https://project-manager-api.fsd-project-manager-dev.com/Tasks
 #### Request for retrieving a task with specific id
 GET https://project-manager-api.fsd-project-manager-dev.com/Tasks/{id}
 
+#### Request for retrieving the project of a task with specific id
+GET https://project-manager-api.fsd-project-manager-dev.com/Tasks/{id}/Project
+
+#### Request for retrieving the assigned to user of a task with specific id
+GET https://project-manager-api.fsd-project-manager-dev.com/Tasks/{id}/AssignedTo
+
+#### Request for retrieving the parent of a task with specific id
+GET https://project-manager-api.fsd-project-manager-dev.com/Tasks/{id}/Parent
+
 #### Request for adding a task
 POST to https://project-manager-api.fsd-project-manager-dev.com/Tasks
 
@@ -198,6 +207,15 @@ GET https://project-manager-api.fsd-project-manager-dev.com/Users?employeeId=100
 #### Request for retrieving a user with specific id
 GET https://project-manager-api.fsd-project-manager-dev.com/Users/{id}
 
+#### Request for retrieving the tasks assigned to a project with specific id
+GET https://project-manager-api.fsd-project-manager-dev.com/Users/{id}/Tasks
+
+#### Request for retrieving the project of an user with specific id
+GET https://project-manager-api.fsd-project-manager-dev.com/Users/{id}/Project
+
+#### Request for retrieving the project managed by an user with specific id
+GET https://project-manager-api.fsd-project-manager-dev.com/Users/{id}/ManagedProject
+
 #### Request for adding a user
 POST to https://project-manager-api.fsd-project-manager-dev.com/Users
 
@@ -276,6 +294,15 @@ GET https://project-manager-api.fsd-project-manager-dev.com/Project
 
 #### Request for retrieving a project with specific id
 GET https://project-manager-api.fsd-project-manager-dev.com/Project/{id}
+
+#### Request for retrieving the manager of a project with specific id
+GET https://project-manager-api.fsd-project-manager-dev.com/Project/{id}/Manager
+
+#### Request for retrieving the tasks of a project with specific id
+GET https://project-manager-api.fsd-project-manager-dev.com/Project/{id}/Tasks
+
+#### Request for retrieving the members of a project with specific id
+GET https://project-manager-api.fsd-project-manager-dev.com/Project/{id}/Members
 
 #### Request for adding a project
 POST to https://project-manager-api.fsd-project-manager-dev.com/Project

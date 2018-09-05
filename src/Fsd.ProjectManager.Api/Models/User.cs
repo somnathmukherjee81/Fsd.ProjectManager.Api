@@ -49,6 +49,12 @@ namespace Fsd.ProjectManager.Api.Models
         public string LastName { get; set; }
 
         /// <summary>
+        /// Gets the full name.
+        /// </summary>
+        [NotMapped]
+        public string FullName => $"{LastName}, {FirstName}";
+
+        /// <summary>
         /// Gets or sets the user's employee id.
         /// </summary>        
         [Required]
@@ -75,6 +81,7 @@ namespace Fsd.ProjectManager.Api.Models
         /// Gets or sets the tasks assigned to the user
         /// </summary>
         [InverseProperty("AssignedTo")]
+        [JsonIgnore]
         public ICollection<Task> Tasks { get; set; }
 
         /// <summary>

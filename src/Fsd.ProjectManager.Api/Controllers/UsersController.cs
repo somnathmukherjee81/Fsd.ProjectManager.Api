@@ -94,6 +94,102 @@ namespace Fsd.ProjectManager.Api.Controllers
         }
 
         /// <summary>
+        /// The GET method for retrieving the tasks assigned to a user
+        /// </summary>
+        /// <param name="id">Id of the User</param>
+        /// <returns>
+        /// The json serialized project.
+        /// </returns>
+        /// <remarks>GET: /Users/5/Tasks</remarks>
+        [HttpGet("{id}/Tasks", Name = "GetTasksByUserId")]
+        public ActionResult<IList<Task>> GetTasks(int id)
+        {
+            var headerInformation = new HeaderInformation(Request.Headers);
+
+            var item = _context.Users.Find(id);
+
+            if (item == null)
+            {
+                return NotFound();
+            }
+
+            _context.Entry(item)
+                .Collection(user => user.Tasks)
+                .Load();
+
+            if (item.Tasks != null)
+            {
+                return item.Tasks.ToList();
+            }
+
+            return new List<Task>();
+        }
+
+        /// <summary>
+        /// The GET method for retrieving the project of a user
+        /// </summary>
+        /// <param name="id">Id of the User</param>
+        /// <returns>
+        /// The json serialized project.
+        /// </returns>
+        /// <remarks>GET: /Users/5/Project</remarks>
+        [HttpGet("{id}/Project", Name = "GetProjectByUserId")]
+        public ActionResult<Project> GetProject(int id)
+        {
+            var headerInformation = new HeaderInformation(Request.Headers);
+
+            var item = _context.Users.Find(id);
+
+            if (item == null)
+            {
+                return NotFound();
+            }
+
+            _context.Entry(item)
+                .Reference(user => user.Project)
+                .Load();
+
+            if (item.Project != null)
+            {
+                return item.Project;
+            }
+
+            return NoContent();
+        }
+
+        /// <summary>
+        /// The GET method for retrieving the project managed by a user
+        /// </summary>
+        /// <param name="id">Id of the User</param>
+        /// <returns>
+        /// The json serialized project.
+        /// </returns>
+        /// <remarks>GET: /Users/5/Project</remarks>
+        [HttpGet("{id}/ManagedProject", Name = "GetManagedProjectByUserId")]
+        public ActionResult<Project> GetManagedProject(int id)
+        {
+            var headerInformation = new HeaderInformation(Request.Headers);
+
+            var item = _context.Users.Find(id);
+
+            if (item == null)
+            {
+                return NotFound();
+            }
+
+            _context.Entry(item)
+                .Reference(user => user.ManagedProject)
+                .Load();
+
+            if (item.ManagedProject != null)
+            {
+                return item.ManagedProject;
+            }
+
+            return NoContent();
+        }
+
+        /// <summary>
         /// The POST method for creating a user
         /// </summary>
         /// <param name="user">User payload</param>

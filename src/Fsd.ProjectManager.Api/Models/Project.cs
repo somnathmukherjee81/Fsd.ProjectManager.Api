@@ -13,6 +13,8 @@ namespace Fsd.ProjectManager.Api.Models
     using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
     using System.ComponentModel.DataAnnotations.Schema;
+    using System.Linq;
+
     using Newtonsoft.Json;
     using Newtonsoft.Json.Converters;
 
@@ -93,13 +95,27 @@ namespace Fsd.ProjectManager.Api.Models
         /// Gets or sets the members in the project
         /// </summary>
         [InverseProperty("Project")]
+        [JsonIgnore]
         public ICollection<User> Members { get; set; }
 
         /// <summary>
         /// Gets or sets the tasks in the project.
         /// </summary>
         [InverseProperty("Project")]
+        [JsonIgnore]
         public ICollection<Task> Tasks { get; set; }
+
+        /// <summary>
+        /// Gets the number of tasks.
+        /// </summary>
+        [NotMapped]
+        public int NumberOfTasks => Tasks?.Count ?? 0;
+
+        /// <summary>
+        /// Gets the number of tasks.
+        /// </summary>
+        [NotMapped]
+        public int NumberOfCompletedTasks => Tasks?.Count(task => task.Status == Models.Status.Completed) ?? 0;
 
         /// <summary>
         /// Gets or sets the timestamp/rowversion.

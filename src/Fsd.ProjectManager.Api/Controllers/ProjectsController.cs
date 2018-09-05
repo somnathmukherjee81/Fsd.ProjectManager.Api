@@ -17,6 +17,7 @@ namespace Fsd.ProjectManager.Api.Controllers
     using Fsd.ProjectManager.Api.Models;
 
     using Microsoft.AspNetCore.Mvc;
+    using Microsoft.EntityFrameworkCore;
 
     /// <summary>
     /// Projects Controller 
@@ -57,7 +58,9 @@ namespace Fsd.ProjectManager.Api.Controllers
         {
             var headerInformation = new HeaderInformation(Request.Headers);
 
-            return _context.Projects.ToList();
+            return _context.Projects
+                .Include(project => project.Tasks)
+                .ToList();
         }
 
         /// <summary>
@@ -81,6 +84,102 @@ namespace Fsd.ProjectManager.Api.Controllers
             }
 
             return item;
+        }
+
+        /// <summary>
+        /// The GET method for retrieving the manager of a projects
+        /// </summary>
+        /// <param name="id">Id of the Project</param>
+        /// <returns>
+        /// The json serialized project.
+        /// </returns>
+        /// <remarks>GET: /Projects/5/Manager</remarks>
+        [HttpGet("{id}/Manager", Name = "GetManagerByProjectId")]
+        public ActionResult<User> GetManager(int id)
+        {
+            var headerInformation = new HeaderInformation(Request.Headers);
+
+            var item = _context.Projects.Find(id);
+
+            if (item == null)
+            {
+                return NotFound();
+            }
+
+            _context.Entry(item)
+                .Reference(project => project.Manager)
+                .Load();
+
+            if (item.Manager != null)
+            {
+                return item.Manager;
+            }
+
+            return NoContent();
+        }
+
+        /// <summary>
+        /// The GET method for retrieving the tasks of a projects
+        /// </summary>
+        /// <param name="id">Id of the Project</param>
+        /// <returns>
+        /// The json serialized project.
+        /// </returns>
+        /// <remarks>GET: /Projects/5/Tasks</remarks>
+        [HttpGet("{id}/Tasks", Name = "GetTasksByProjectId")]
+        public ActionResult<IList<Task>> GetTasks(int id)
+        {
+            var headerInformation = new HeaderInformation(Request.Headers);
+
+            var item = _context.Projects.Find(id);
+
+            if (item == null)
+            {
+                return NotFound();
+            }
+
+            _context.Entry(item)
+                .Collection(project => project.Tasks)
+                .Load();
+
+            if (item.Tasks != null)
+            {
+                return item.Tasks.ToList();
+            }
+
+            return new List<Task>();
+        }
+
+        /// <summary>
+        /// The GET method for retrieving the members of a projects
+        /// </summary>
+        /// <param name="id">Id of the Project</param>
+        /// <returns>
+        /// The json serialized project.
+        /// </returns>
+        /// <remarks>GET: /Projects/5/Members</remarks>
+        [HttpGet("{id}/Members", Name = "GetMembersByProjectId")]
+        public ActionResult<IList<User>> GetMembers(int id)
+        {
+            var headerInformation = new HeaderInformation(Request.Headers);
+
+            var item = _context.Projects.Find(id);
+
+            if (item == null)
+            {
+                return NotFound();
+            }
+
+            _context.Entry(item)
+                .Collection(project => project.Members)
+                .Load();
+
+            if (item.Members != null)
+            {
+                return item.Members.ToList();
+            }
+
+            return new List<User>();
         }
 
         /// <summary>

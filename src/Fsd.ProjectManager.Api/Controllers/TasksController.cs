@@ -84,6 +84,102 @@ namespace Fsd.ProjectManager.Api.Controllers
         }
 
         /// <summary>
+        /// The GET method for retrieving the project of a task
+        /// </summary>
+        /// <param name="id">Id of the Task</param>
+        /// <returns>
+        /// The json serialized project.
+        /// </returns>
+        /// <remarks>GET: /Tasks/5/Project</remarks>
+        [HttpGet("{id}/Project", Name = "GetProjectByTaskId")]
+        public ActionResult<Project> GetProject(int id)
+        {
+            var headerInformation = new HeaderInformation(Request.Headers);
+
+            var item = _context.Tasks.Find(id);
+
+            if (item == null)
+            {
+                return NotFound();
+            }
+
+            _context.Entry(item)
+                .Reference(task => task.Project)
+                .Load();
+
+            if (item.Project != null)
+            {
+                return item.Project;
+            }
+
+            return NotFound();
+        }
+
+        /// <summary>
+        /// The GET method for retrieving the assigned to user of a task
+        /// </summary>
+        /// <param name="id">Id of the Task</param>
+        /// <returns>
+        /// The json serialized project.
+        /// </returns>
+        /// <remarks>GET: /Tasks/5/AssignedTo</remarks>
+        [HttpGet("{id}/AssignedTo", Name = "GetAssignedToByTaskId")]
+        public ActionResult<User> GetAssignedTo(int id)
+        {
+            var headerInformation = new HeaderInformation(Request.Headers);
+
+            var item = _context.Tasks.Find(id);
+
+            if (item == null)
+            {
+                return NotFound();
+            }
+
+            _context.Entry(item)
+                .Reference(task => task.AssignedTo)
+                .Load();
+
+            if (item.AssignedTo != null)
+            {
+                return item.AssignedTo;
+            }
+
+            return NoContent();
+        }
+
+        /// <summary>
+        /// The GET method for retrieving the parent of a task
+        /// </summary>
+        /// <param name="id">Id of the Task</param>
+        /// <returns>
+        /// The json serialized project.
+        /// </returns>
+        /// <remarks>GET: /Tasks/5/AssignedTo</remarks>
+        [HttpGet("{id}/Parent", Name = "GetParentByTaskId")]
+        public ActionResult<Task> GetParent(int id)
+        {
+            var headerInformation = new HeaderInformation(Request.Headers);
+
+            var item = _context.Tasks.Find(id);
+
+            if (item == null)
+            {
+                return NotFound();
+            }
+
+            _context.Entry(item)
+                .Reference(task => task.Parent)
+                .Load();
+
+            if (item.Parent != null)
+            {
+                return item.Parent;
+            }
+
+            return NoContent();
+        }
+
+        /// <summary>
         /// The POST method for creating a task
         /// </summary>
         /// <param name="task">Task payload</param>
