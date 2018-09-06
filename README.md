@@ -71,6 +71,10 @@ docker run -p 9090:9090 project-manager-api
 ### Use the batch file to build
 You can also use the batch file `Build.bat` to build and package the project. However please note that the project is supposed to run in Kubernetes after the Kubernetes configurations and environment variables from the `K8SConfig` directory are applied.
 
+### Use the Jenkins Pipeline to build
+
+Alternatively you can use the Jenkins (http://localhost:8080) pipeline in project `Fsd.ProjectManager.Api` which automatically triggers the build when any change happens on the Git repository.
+
 ## Class Diagram
 [![Class Diagram of the Project manager Api](./design/Fsd.ProjectManager.Api-Design-Class-Diagram.png)](./design/Fsd.ProjectManager.Api-Design-Class-Diagram.png)
 
