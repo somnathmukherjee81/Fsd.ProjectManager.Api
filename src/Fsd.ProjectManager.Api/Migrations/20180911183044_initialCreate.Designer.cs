@@ -10,7 +10,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Fsd.ProjectManager.Api.Migrations
 {
     [DbContext(typeof(ProjectManagerContext))]
-    [Migration("20180911165613_initialCreate")]
+    [Migration("20180911183044_initialCreate")]
     partial class initialCreate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)

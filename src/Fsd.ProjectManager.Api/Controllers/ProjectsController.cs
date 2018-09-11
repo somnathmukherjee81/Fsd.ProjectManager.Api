@@ -83,6 +83,10 @@ namespace Fsd.ProjectManager.Api.Controllers
                 return NotFound();
             }
 
+            _context.Entry(item)
+                .Reference(project => project.Tasks)
+                .Load();
+
             return item;
         }
 
