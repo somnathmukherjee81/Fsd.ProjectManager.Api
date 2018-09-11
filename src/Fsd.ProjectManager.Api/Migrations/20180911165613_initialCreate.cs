@@ -18,7 +18,7 @@ namespace Fsd.ProjectManager.Api.Migrations
                     Description = table.Column<string>(maxLength: 5000, nullable: true),
                     StartDate = table.Column<DateTime>(nullable: true),
                     EndDate = table.Column<DateTime>(nullable: true),
-                    Priority = table.Column<string>(type: "nvarchar(6)", nullable: true),
+                    Priority = table.Column<int>(nullable: true),
                     Status = table.Column<string>(type: "nvarchar(10)", nullable: true),
                     ProjectId = table.Column<int>(nullable: false),
                     ParentId = table.Column<int>(nullable: true),
@@ -65,7 +65,7 @@ namespace Fsd.ProjectManager.Api.Migrations
                     Description = table.Column<string>(maxLength: 5000, nullable: true),
                     StartDate = table.Column<DateTime>(nullable: true),
                     EndDate = table.Column<DateTime>(nullable: true),
-                    Priority = table.Column<string>(type: "nvarchar(6)", nullable: true),
+                    Priority = table.Column<int>(nullable: true),
                     Status = table.Column<string>(type: "nvarchar(10)", nullable: true),
                     ManagerId = table.Column<int>(nullable: true),
                     Timestamp = table.Column<byte[]>(rowVersion: true, nullable: true)

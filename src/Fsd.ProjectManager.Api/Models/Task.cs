@@ -64,8 +64,6 @@ namespace Fsd.ProjectManager.Api.Models
         /// <summary>
         /// Gets or sets the task priotity
         /// </summary>
-        [Column(TypeName = "nvarchar(6)")]
-        [JsonConverter(typeof(StringEnumConverter))]
         public Priority? Priority { get; set; }
 
         /// <summary>

@@ -32,8 +32,7 @@ namespace Fsd.ProjectManager.Api.Migrations
 
                     b.Property<int?>("ManagerId");
 
-                    b.Property<string>("Priority")
-                        .HasColumnType("nvarchar(6)");
+                    b.Property<int?>("Priority");
 
                     b.Property<DateTime?>("StartDate");
 
@@ -70,8 +69,7 @@ namespace Fsd.ProjectManager.Api.Migrations
 
                     b.Property<int?>("ParentId");
 
-                    b.Property<string>("Priority")
-                        .HasColumnType("nvarchar(6)");
+                    b.Property<int?>("Priority");
 
                     b.Property<int>("ProjectId");
 

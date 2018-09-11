@@ -109,7 +109,7 @@ POST to https://project-manager-api.fsd-project-manager-dev.com/Tasks
     "description": "Description of the Task",
     "startDate": "2018-09-23",
     "endDate": "2018-09-27",
-    "priority": "Low",
+    "priority": 0,
     "status": "NotStarted",
     "projectId": 1
 }
@@ -124,7 +124,7 @@ PUT to https://task-manager-api.fsd-capsule-dev.com/Tasks/{id}
     "description": "Description of the Task",
     "startDate": "2018-07-23",
     "endDate": "2018-07-27",
-    "priority": "High",
+    "priority": 3,
     "status": "InProgress",
     "projectId": 1
 }
@@ -145,7 +145,7 @@ DELETE https://task-manager-api.fsd-capsule-dev.com/Tasks/{id}
         "description": "Implement Channel Service for the feature which will invoke the factories",
         "startDate": "2018-09-02T00:00:00",
         "endDate": "2018-09-06T00:00:00",
-        "priority": "High",
+        "priority": 3,
         "status": "NotStarted",
         "projectId": 1,
         "userId": 10,
@@ -158,7 +158,7 @@ DELETE https://task-manager-api.fsd-capsule-dev.com/Tasks/{id}
         "description": "Implement Front End Service for the feature which will invoke the Channel Service",
         "startDate": "2018-09-09T00:00:00",
         "endDate": "2018-09-13T00:00:00",
-        "priority": "High",
+        "priority": 3,
         "status": "NotStarted",
         "projectId": 1,
         "userId": 11,
@@ -186,7 +186,7 @@ DELETE https://task-manager-api.fsd-capsule-dev.com/Tasks/{id}
     "description": "Implement Channel Service for the feature which will invoke the factories",
     "startDate": "2018-09-02T00:00:00",
     "endDate": "2018-09-06T00:00:00",
-    "priority": "High",
+    "priority": 3,
     "status": "NotStarted",
     "projectId": 1,
     "userId": 10,
@@ -319,7 +319,7 @@ POST to https://project-manager-api.fsd-project-manager-dev.com/Project
     "description": "To implement a Turning Machine that can pass the Turing Test",
     "startDate": "2019-01-01T00:00:00",
     "endDate": "2019-12-31T00:00:00",
-    "priority": "Low",
+    "priority": 0,
     "status": "NotStarted",
     "managerId": 16
 }
@@ -334,7 +334,7 @@ PUT to https://project-manager-api.fsd-project-manager-dev.com/Project/{id}
     "description": "To implement a Turning Machine that can pass the Turing Test",
     "startDate": "2019-01-01T00:00:00",
     "endDate": "2019-12-31T00:00:00",
-    "priority": "High",
+    "priority": 3,
     "status": "InProgress",
     "managerId": 16
 }
@@ -355,7 +355,7 @@ DELETE https://project-manager-api.fsd-project-manager-dev.com/Project/{id}
         "description": "To implement a Turning Machine that can pass the Turing Test",
         "startDate": "2018-01-01T00:00:00",
         "endDate": "2018-12-31T00:00:00",
-        "priority": "High",
+        "priority": 3,
         "status": "InProgress",
         "managerId": 14,
         "numberOfTasks": 0,
@@ -369,7 +369,7 @@ DELETE https://project-manager-api.fsd-project-manager-dev.com/Project/{id}
         "description": "To implement a Turning Machine that can pass the Turing Test",
         "startDate": "2019-01-01T00:00:00",
         "endDate": "2019-12-31T00:00:00",
-        "priority": "Low",
+        "priority": 3,
         "status": "NotStarted",
         "managerId": 16,
         "numberOfTasks": 0,
@@ -388,7 +388,7 @@ DELETE https://project-manager-api.fsd-project-manager-dev.com/Project/{id}
     "description": "To implement a Turning Machine that can pass the Turing Test",
     "startDate": "2018-01-01T00:00:00",
     "endDate": "2018-12-31T00:00:00",
-    "priority": "High",
+    "priority": 3,
     "status": "InProgress",
     "managerId": 14,
     "timestamp": "AAAAAAAANrU="
