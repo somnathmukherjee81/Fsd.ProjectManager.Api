@@ -30,8 +30,13 @@ namespace Fsd.ProjectManager.Api.Models
         Deferred = 2,
 
         /// <summary>
+        /// The task is suspended
+        /// </summary>
+        Suspended = 3,
+
+        /// <summary>
         /// The task is completed
         /// </summary>
-        Completed = 3
+        Completed = 4
     }
 }
