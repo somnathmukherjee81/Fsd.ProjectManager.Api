@@ -36,7 +36,7 @@ namespace Fsd.ProjectManager.Api.Data
                     new User
                         {
                             FirstName = "Alan",
-                            LastName = "Turiing",
+                            LastName = "Turing",
                             EmployeeId = "100000"
                         },
                     new User
