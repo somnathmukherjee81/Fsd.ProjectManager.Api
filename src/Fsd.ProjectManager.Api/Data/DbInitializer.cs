@@ -151,8 +151,6 @@ namespace Fsd.ProjectManager.Api.Data
                 context.Users.Update(user);
             }
 
-            context.Users.First(u => u.EmployeeId == "100013").ManagedProjectId = projectId;
-
             context.SaveChanges();
 
             // Add Parent Tasks

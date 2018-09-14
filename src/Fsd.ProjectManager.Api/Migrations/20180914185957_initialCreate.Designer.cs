@@ -10,7 +10,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Fsd.ProjectManager.Api.Migrations
 {
     [DbContext(typeof(ProjectManagerContext))]
-    [Migration("20180911183044_initialCreate")]
+    [Migration("20180914185957_initialCreate")]
     partial class initialCreate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -118,8 +118,6 @@ namespace Fsd.ProjectManager.Api.Migrations
                     b.Property<string>("LastName")
                         .IsRequired()
                         .HasMaxLength(500);
-
-                    b.Property<int?>("ManagedProjectId");
 
                     b.Property<int?>("ProjectId");
 

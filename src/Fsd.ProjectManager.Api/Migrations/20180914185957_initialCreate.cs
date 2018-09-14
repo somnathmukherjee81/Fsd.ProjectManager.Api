@@ -46,7 +46,6 @@ namespace Fsd.ProjectManager.Api.Migrations
                     LastName = table.Column<string>(maxLength: 500, nullable: false),
                     EmployeeId = table.Column<string>(maxLength: 6, nullable: false),
                     ProjectId = table.Column<int>(nullable: true),
-                    ManagedProjectId = table.Column<int>(nullable: true),
                     Timestamp = table.Column<byte[]>(rowVersion: true, nullable: true)
                 },
                 constraints: table =>

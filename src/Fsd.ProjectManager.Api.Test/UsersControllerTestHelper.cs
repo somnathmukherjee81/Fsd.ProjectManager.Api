@@ -179,8 +179,7 @@ namespace Fsd.ProjectManager.Api.Test
                             FirstName = "Jeff",
                             LastName = "Sutherland",
                             EmployeeId = "100013",
-                            ProjectId = 1,
-                            ManagedProjectId = 1
+                            ProjectId = 1
                         }
                 };
         }

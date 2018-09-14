@@ -117,8 +117,6 @@ namespace Fsd.ProjectManager.Api.Migrations
                         .IsRequired()
                         .HasMaxLength(500);
 
-                    b.Property<int?>("ManagedProjectId");
-
                     b.Property<int?>("ProjectId");
 
                     b.Property<byte[]>("Timestamp")

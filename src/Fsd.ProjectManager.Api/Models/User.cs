@@ -85,13 +85,6 @@ namespace Fsd.ProjectManager.Api.Models
         public ICollection<Task> Tasks { get; set; }
 
         /// <summary>
-        /// Gets or sets the project id the user manages.
-        /// </summary>        
-        [Display(Name = "Managed Project Id")]
-        [DisplayFormat(NullDisplayText = "-")]
-        public int? ManagedProjectId { get; set; }
-
-        /// <summary>
         /// Gets or sets the project the user manages
         /// </summary>
         [JsonIgnore]
