@@ -79,7 +79,8 @@ namespace Fsd.ProjectManager.Api.Test
                             EndDate = DateTime.Parse("2018-12-31"),
                             Priority = Priority.High,
                             Status = Status.InProgress,
-                            ManagerId = 14
+                            ManagerId = 14,
+                            Tasks = new List<Task>()
                         },
                     new Project
                         {
@@ -90,7 +91,8 @@ namespace Fsd.ProjectManager.Api.Test
                             EndDate = DateTime.Parse("2019-12-31"),
                             Priority = Priority.Low,
                             Status = Status.NotStarted,
-                            ManagerId = 15
+                            ManagerId = 15,
+                            Tasks = new List<Task>()
                         }
                 };
         }

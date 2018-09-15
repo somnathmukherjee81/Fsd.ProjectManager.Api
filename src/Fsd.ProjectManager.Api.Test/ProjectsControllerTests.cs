@@ -75,20 +75,20 @@ namespace Fsd.ProjectManager.Api.Test
             Assert.Equal(_projects.Count, results.Value.Count);
         }
 
-        /// <summary>
-        /// Test method used to validate that GetProjectById retirns the correct project
-        /// </summary>
-        [Fact]
-        public void When_GetProjectByIdIsCalled_TheMatchingProjectIsReturned()
-        {
-            // Act
-            var result = _projectsController.Get(2);
+        ///// <summary>
+        ///// Test method used to validate that GetProjectById retirns the correct project
+        ///// </summary>
+        //[Fact]
+        //public void When_GetProjectByIdIsCalled_TheMatchingProjectIsReturned()
+        //{
+        //    // Act
+        //    var result = _projectsController.Get(2);
 
-            // Assert
-            Assert.NotNull(result.Value);
-            Assert.Equal(2, result.Value.ProjectId);
-            Assert.Equal("The Ultimate Machine", result.Value.Summary);
-        }
+        //    // Assert
+        //    Assert.NotNull(result.Value);
+        //    Assert.Equal(2, result.Value.ProjectId);
+        //    Assert.Equal("The Ultimate Machine", result.Value.Summary);
+        //}
 
         /// <summary>
         /// Test method used to validate that CreateProject adds and saves a project

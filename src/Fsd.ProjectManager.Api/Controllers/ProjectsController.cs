@@ -84,7 +84,7 @@ namespace Fsd.ProjectManager.Api.Controllers
             }
 
             _context.Entry(item)
-                .Reference(project => project.Tasks)
+                .Collection(project => project.Tasks)
                 .Load();
 
             return item;
