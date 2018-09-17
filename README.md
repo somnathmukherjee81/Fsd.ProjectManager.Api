@@ -81,6 +81,113 @@ Alternatively you can use the Jenkins (http://localhost:8080) pipeline in projec
 ## Database
 [![Database of the Project manager Api](./design/Fsd.ProjectManager.Api-Design-Database.png)](./design/Fsd.ProjectManager.Api-Design-Database.png)
 
+## Working with Projects
+
+### Request Structure
+
+#### Request for retrieving all projects
+GET https://project-manager-api.fsd-project-manager-dev.com/Project
+
+#### Request for retrieving a project with specific id
+GET https://project-manager-api.fsd-project-manager-dev.com/Project/{id}
+
+#### Request for retrieving the manager of a project with specific id
+GET https://project-manager-api.fsd-project-manager-dev.com/Project/{id}/Manager
+
+#### Request for retrieving the tasks of a project with specific id
+GET https://project-manager-api.fsd-project-manager-dev.com/Project/{id}/Tasks
+
+#### Request for retrieving the members of a project with specific id
+GET https://project-manager-api.fsd-project-manager-dev.com/Project/{id}/Members
+
+#### Request for adding a project
+POST to https://project-manager-api.fsd-project-manager-dev.com/Project
+
+```json
+{
+    "summary": "The Ultimate Machine",
+    "description": "To implement a Turning Machine that can pass the Turing Test",
+    "startDate": "2019-01-01T00:00:00",
+    "endDate": "2019-12-31T00:00:00",
+    "priority": 0,
+    "status": "NotStarted",
+    "managerId": 16
+}
+```
+
+#### Request for updating a project
+PUT to https://project-manager-api.fsd-project-manager-dev.com/Project/{id}
+
+```json
+{
+    "summary": "The Super Ultimate Machine",
+    "description": "To implement a Turning Machine that can pass the Turing Test",
+    "startDate": "2019-01-01T00:00:00",
+    "endDate": "2019-12-31T00:00:00",
+    "priority": 3,
+    "status": "InProgress",
+    "managerId": 16
+}
+```
+
+#### Request for deleting a project with specific id
+DELETE https://project-manager-api.fsd-project-manager-dev.com/Project/{id}
+
+### Response Structure
+
+#### For all Projects
+```json
+[
+    {
+        "$id": "13",
+        "projectId": 1,
+        "summary": "The Machine",
+        "description": "To implement a Turning Machine that can pass the Turing Test",
+        "startDate": "2018-01-01T00:00:00",
+        "endDate": "2018-12-31T00:00:00",
+        "priority": 3,
+        "status": "InProgress",
+        "managerId": 14,
+        "numberOfTasks": 0,
+        "numberOfCompletedTasks": 0,
+        "timestamp": "AAAAAAAANrU="
+    },
+    {
+        "$id": "14",
+        "projectId": 3,
+        "summary": "The Ultimate Machine",
+        "description": "To implement a Turning Machine that can pass the Turing Test",
+        "startDate": "2019-01-01T00:00:00",
+        "endDate": "2019-12-31T00:00:00",
+        "priority": 3,
+        "status": "NotStarted",
+        "managerId": 16,
+        "numberOfTasks": 0,
+        "numberOfCompletedTasks": 0,
+        "timestamp": "AAAAAAAANrY="
+    }
+]
+```
+
+#### For a single Project retrieve and for update
+```json
+{
+    "$id": "15",
+    "projectId": 1,
+    "summary": "The Machine",
+    "description": "To implement a Turning Machine that can pass the Turing Test",
+    "startDate": "2018-01-01T00:00:00",
+    "endDate": "2018-12-31T00:00:00",
+    "priority": 3,
+    "status": "InProgress",
+    "managerId": 14,
+    "timestamp": "AAAAAAAANrU="
+}
+```
+
+## Sequence Diagram
+[![Sequence Diagram of Project Manager Api for operations on Projects](./design/Fsd.ProjectManager.Api-Design-Projects-Sequence.png)](./design/Fsd.ProjectManager.Api-Design-Projects-Sequence.png)
+
 ## Working with Tasks
 
 ### Request Structure
@@ -290,110 +397,3 @@ DELETE https://project-manager-api.fsd-project-manager-dev.com/Users/{id}
 
 ## Sequence Diagram
 [![Sequence Diagram of Project Manager Api for operations on Users](./design/Fsd.ProjectManager.Api-Design-Users-Sequence.png)](./design/Fsd.ProjectManager.Api-Design-Users-Sequence.png)
-
-## Working with Projects
-
-### Request Structure
-
-#### Request for retrieving all projects
-GET https://project-manager-api.fsd-project-manager-dev.com/Project
-
-#### Request for retrieving a project with specific id
-GET https://project-manager-api.fsd-project-manager-dev.com/Project/{id}
-
-#### Request for retrieving the manager of a project with specific id
-GET https://project-manager-api.fsd-project-manager-dev.com/Project/{id}/Manager
-
-#### Request for retrieving the tasks of a project with specific id
-GET https://project-manager-api.fsd-project-manager-dev.com/Project/{id}/Tasks
-
-#### Request for retrieving the members of a project with specific id
-GET https://project-manager-api.fsd-project-manager-dev.com/Project/{id}/Members
-
-#### Request for adding a project
-POST to https://project-manager-api.fsd-project-manager-dev.com/Project
-
-```json
-{
-    "summary": "The Ultimate Machine",
-    "description": "To implement a Turning Machine that can pass the Turing Test",
-    "startDate": "2019-01-01T00:00:00",
-    "endDate": "2019-12-31T00:00:00",
-    "priority": 0,
-    "status": "NotStarted",
-    "managerId": 16
-}
-```
-
-#### Request for updating a project
-PUT to https://project-manager-api.fsd-project-manager-dev.com/Project/{id}
-
-```json
-{
-    "summary": "The Super Ultimate Machine",
-    "description": "To implement a Turning Machine that can pass the Turing Test",
-    "startDate": "2019-01-01T00:00:00",
-    "endDate": "2019-12-31T00:00:00",
-    "priority": 3,
-    "status": "InProgress",
-    "managerId": 16
-}
-```
-
-#### Request for deleting a project with specific id
-DELETE https://project-manager-api.fsd-project-manager-dev.com/Project/{id}
-
-### Response Structure
-
-#### For all Projects
-```json
-[
-    {
-        "$id": "13",
-        "projectId": 1,
-        "summary": "The Machine",
-        "description": "To implement a Turning Machine that can pass the Turing Test",
-        "startDate": "2018-01-01T00:00:00",
-        "endDate": "2018-12-31T00:00:00",
-        "priority": 3,
-        "status": "InProgress",
-        "managerId": 14,
-        "numberOfTasks": 0,
-        "numberOfCompletedTasks": 0,
-        "timestamp": "AAAAAAAANrU="
-    },
-    {
-        "$id": "14",
-        "projectId": 3,
-        "summary": "The Ultimate Machine",
-        "description": "To implement a Turning Machine that can pass the Turing Test",
-        "startDate": "2019-01-01T00:00:00",
-        "endDate": "2019-12-31T00:00:00",
-        "priority": 3,
-        "status": "NotStarted",
-        "managerId": 16,
-        "numberOfTasks": 0,
-        "numberOfCompletedTasks": 0,
-        "timestamp": "AAAAAAAANrY="
-    }
-]
-```
-
-#### For a single Project retrieve and for update
-```json
-{
-    "$id": "15",
-    "projectId": 1,
-    "summary": "The Machine",
-    "description": "To implement a Turning Machine that can pass the Turing Test",
-    "startDate": "2018-01-01T00:00:00",
-    "endDate": "2018-12-31T00:00:00",
-    "priority": 3,
-    "status": "InProgress",
-    "managerId": 14,
-    "timestamp": "AAAAAAAANrU="
-}
-```
-
-## Sequence Diagram
-[![Sequence Diagram of Project Manager Api for operations on Projects](./design/Fsd.ProjectManager.Api-Design-Projects-Sequence.png)](./design/Fsd.ProjectManager.Api-Design-Projects-Sequence.png)
