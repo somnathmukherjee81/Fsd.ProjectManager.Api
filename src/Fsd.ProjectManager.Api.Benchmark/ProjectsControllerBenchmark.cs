@@ -262,7 +262,7 @@ namespace Fsd.ProjectManager.Api.Benchmark
         [MemoryAssertion(
             MemoryMetric.TotalBytesAllocated, 
             MustBe.LessThanOrEqualTo, 
-            ByteConstants.SixtyFourKb)]
+            1024 * ByteConstants.SixtyFourKb)]
         public void Benchmark_Performance_GetAllProjectsMemory()
         {
             _projectsController.Get();
@@ -279,7 +279,7 @@ namespace Fsd.ProjectManager.Api.Benchmark
         //[MemoryAssertion(
         //    MemoryMetric.TotalBytesAllocated,
         //    MustBe.LessThanOrEqualTo,
-        //    ByteConstants.SixtyFourKb)]
+        //    1024 * ByteConstants.SixtyFourKb)]
         //public void Benchmark_Performance_GetProjectByIdMemory()
         //{
         //    _projectsController.Get(2);
@@ -296,7 +296,7 @@ namespace Fsd.ProjectManager.Api.Benchmark
         [MemoryAssertion(
             MemoryMetric.TotalBytesAllocated,
             MustBe.LessThanOrEqualTo,
-            ByteConstants.SixtyFourKb)]
+            1024 * ByteConstants.SixtyFourKb)]
         public void Benchmark_Performance_CreateProjectMemory()
         {
             // Arrange 
@@ -327,7 +327,7 @@ namespace Fsd.ProjectManager.Api.Benchmark
         [MemoryAssertion(
             MemoryMetric.TotalBytesAllocated,
             MustBe.LessThanOrEqualTo,
-            ByteConstants.SixtyFourKb)]
+            1024 * ByteConstants.SixtyFourKb)]
         public void Benchmark_Performance_UpdateProjectMemory()
         {
             // Arrange 
@@ -358,7 +358,7 @@ namespace Fsd.ProjectManager.Api.Benchmark
         [MemoryAssertion(
             MemoryMetric.TotalBytesAllocated,
             MustBe.LessThanOrEqualTo,
-            ByteConstants.SixtyFourKb)]
+            1024 * ByteConstants.SixtyFourKb)]
         public void Benchmark_Performance_DeleteProjectMemory()
         {
             _projectsController.Delete(2);

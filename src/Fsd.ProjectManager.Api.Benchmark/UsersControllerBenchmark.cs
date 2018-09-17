@@ -249,7 +249,7 @@ namespace Fsd.ProjectManager.Api.Benchmark
         [MemoryAssertion(
             MemoryMetric.TotalBytesAllocated, 
             MustBe.LessThanOrEqualTo, 
-            ByteConstants.SixtyFourKb)]
+            1024 * ByteConstants.SixtyFourKb)]
         public void Benchmark_Performance_GetAllUsersMemory()
         {
             _usersController.Get();
@@ -266,7 +266,7 @@ namespace Fsd.ProjectManager.Api.Benchmark
         [MemoryAssertion(
             MemoryMetric.TotalBytesAllocated,
             MustBe.LessThanOrEqualTo,
-            ByteConstants.SixtyFourKb)]
+            1024 * ByteConstants.SixtyFourKb)]
         public void Benchmark_Performance_GetUserByIdMemory()
         {
             _usersController.Get(2);
@@ -283,7 +283,7 @@ namespace Fsd.ProjectManager.Api.Benchmark
         [MemoryAssertion(
             MemoryMetric.TotalBytesAllocated,
             MustBe.LessThanOrEqualTo,
-            ByteConstants.SixtyFourKb)]
+            1024 * ByteConstants.SixtyFourKb)]
         public void Benchmark_Performance_CreateUserMemory()
         {
             // Arrange 
@@ -311,7 +311,7 @@ namespace Fsd.ProjectManager.Api.Benchmark
         [MemoryAssertion(
             MemoryMetric.TotalBytesAllocated,
             MustBe.LessThanOrEqualTo,
-            ByteConstants.SixtyFourKb)]
+            1024 * ByteConstants.SixtyFourKb)]
         public void Benchmark_Performance_UpdateUserMemory()
         {
             // Arrange 
@@ -339,7 +339,7 @@ namespace Fsd.ProjectManager.Api.Benchmark
         [MemoryAssertion(
             MemoryMetric.TotalBytesAllocated,
             MustBe.LessThanOrEqualTo,
-            ByteConstants.SixtyFourKb)]
+            1024 * ByteConstants.SixtyFourKb)]
         public void Benchmark_Performance_DeleteUserMemory()
         {
             _usersController.Delete(2);
