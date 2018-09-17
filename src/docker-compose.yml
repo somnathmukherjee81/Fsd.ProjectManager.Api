@@ -1,0 +1,8 @@
+version: '3'
+
+services:
+  project-manager-api:
+    image: project-manager-api
+    build:
+      context: ./project-manager-api
+      dockerfile: Dockerfile

@@ -1,0 +1,452 @@
+{
+	"variables": [],
+	"info": {
+		"name": "FSD Project Manager",
+		"_postman_id": "603a02c0-6752-3103-7593-7568bf3d60ee",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "fsd-project-manager-tasks",
+			"description": "",
+			"item": [
+				{
+					"name": "Get All Tasks",
+					"request": {
+						"url": "http://localhost:9090/Tasks",
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"Origin\": {\r\n    \"Code\": \"WLG\"\r\n  },\r\n  \"Destination\": {\r\n    \"Code\": \"XNA\"\r\n  },\r\n  \"DepartureDate\": \"2018-03-30\"\r\n}"
+						},
+						"description": null
+					},
+					"response": []
+				},
+				{
+					"name": "Get Task By Id",
+					"request": {
+						"url": "http://localhost:9090/Tasks/1",
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"Origin\": {\r\n    \"Code\": \"WLG\"\r\n  },\r\n  \"Destination\": {\r\n    \"Code\": \"XNA\"\r\n  },\r\n  \"DepartureDate\": \"2018-03-30\"\r\n}"
+						},
+						"description": null
+					},
+					"response": []
+				},
+				{
+					"name": "Get Project by Task Id",
+					"request": {
+						"url": "http://localhost:9090/Tasks/12/Project",
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"Origin\": {\r\n    \"Code\": \"WLG\"\r\n  },\r\n  \"Destination\": {\r\n    \"Code\": \"XNA\"\r\n  },\r\n  \"DepartureDate\": \"2018-03-30\"\r\n}"
+						},
+						"description": null
+					},
+					"response": []
+				},
+				{
+					"name": "Get Assigned To by Task Id",
+					"request": {
+						"url": "http://localhost:9090/Tasks/12/AssignedTo",
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"Origin\": {\r\n    \"Code\": \"WLG\"\r\n  },\r\n  \"Destination\": {\r\n    \"Code\": \"XNA\"\r\n  },\r\n  \"DepartureDate\": \"2018-03-30\"\r\n}"
+						},
+						"description": null
+					},
+					"response": []
+				},
+				{
+					"name": "Get Parent by Task Id",
+					"request": {
+						"url": "http://localhost:9090/Tasks/12/Parent",
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"Origin\": {\r\n    \"Code\": \"WLG\"\r\n  },\r\n  \"Destination\": {\r\n    \"Code\": \"XNA\"\r\n  },\r\n  \"DepartureDate\": \"2018-03-30\"\r\n}"
+						},
+						"description": null
+					},
+					"response": []
+				},
+				{
+					"name": "Create Task",
+					"request": {
+						"url": "http://localhost:9090/Tasks",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"summary\": \"Test Task\",\n    \"description\": \"Create Release Definitions in Azure\",\n    \"startDate\": \"2018-07-23\",\n    \"endDate\": \"2018-07-27\",\n    \"priority\": \"Low\",\n    \"status\": \"NotStarted\",\n    \"projectId\": 1\n}"
+						},
+						"description": null
+					},
+					"response": []
+				},
+				{
+					"name": "Update Task",
+					"request": {
+						"url": "http://localhost:9090/Tasks/18",
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"summary\": \"Test Task 2\",\n    \"description\": \"Create Release Definitions in Azure\",\n    \"startDate\": \"2018-07-23\",\n    \"endDate\": \"2018-07-27\",\n    \"priority\": \"Low\",\n    \"status\": \"NotStarted\",\n    \"projectId\": 1\n}"
+						},
+						"description": null
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Task",
+					"request": {
+						"url": "http://localhost:9090/Tasks/18",
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"description": null
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "fsd-project-manager-users",
+			"description": "",
+			"item": [
+				{
+					"name": "Get All Users",
+					"request": {
+						"url": "http://localhost:9090/Users",
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"Origin\": {\r\n    \"Code\": \"WLG\"\r\n  },\r\n  \"Destination\": {\r\n    \"Code\": \"XNA\"\r\n  },\r\n  \"DepartureDate\": \"2018-03-30\"\r\n}"
+						},
+						"description": null
+					},
+					"response": []
+				},
+				{
+					"name": "Get Tasks By User Id",
+					"request": {
+						"url": "http://localhost:9090/Users/1/Tasks",
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"Origin\": {\r\n    \"Code\": \"WLG\"\r\n  },\r\n  \"Destination\": {\r\n    \"Code\": \"XNA\"\r\n  },\r\n  \"DepartureDate\": \"2018-03-30\"\r\n}"
+						},
+						"description": null
+					},
+					"response": []
+				},
+				{
+					"name": "Get Project By User Id",
+					"request": {
+						"url": "http://localhost:9090/Users/1/Project",
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"Origin\": {\r\n    \"Code\": \"WLG\"\r\n  },\r\n  \"Destination\": {\r\n    \"Code\": \"XNA\"\r\n  },\r\n  \"DepartureDate\": \"2018-03-30\"\r\n}"
+						},
+						"description": null
+					},
+					"response": []
+				},
+				{
+					"name": "Get Managed Project By User Id",
+					"request": {
+						"url": "http://localhost:9090/Users/14/ManagedProject",
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"Origin\": {\r\n    \"Code\": \"WLG\"\r\n  },\r\n  \"Destination\": {\r\n    \"Code\": \"XNA\"\r\n  },\r\n  \"DepartureDate\": \"2018-03-30\"\r\n}"
+						},
+						"description": null
+					},
+					"response": []
+				},
+				{
+					"name": "Get User with Employee Id",
+					"request": {
+						"url": {
+							"raw": "http://localhost:9090/Users?employeeId=100014",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9090",
+							"path": [
+								"Users"
+							],
+							"query": [
+								{
+									"key": "employeeId",
+									"value": "100014",
+									"equals": true,
+									"description": ""
+								}
+							],
+							"variable": []
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"Origin\": {\r\n    \"Code\": \"WLG\"\r\n  },\r\n  \"Destination\": {\r\n    \"Code\": \"XNA\"\r\n  },\r\n  \"DepartureDate\": \"2018-03-30\"\r\n}"
+						},
+						"description": null
+					},
+					"response": []
+				},
+				{
+					"name": "Get User By Id",
+					"request": {
+						"url": "http://localhost:9090/Users/2",
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"Origin\": {\r\n    \"Code\": \"WLG\"\r\n  },\r\n  \"Destination\": {\r\n    \"Code\": \"XNA\"\r\n  },\r\n  \"DepartureDate\": \"2018-03-30\"\r\n}"
+						},
+						"description": null
+					},
+					"response": []
+				},
+				{
+					"name": "Create User",
+					"request": {
+						"url": "http://localhost:9090/Users",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"firstName\": \"Somnath\",\n    \"lastName\": \"Mukherjee\",\n    \"employeeId\": \"100015\"\n}"
+						},
+						"description": null
+					},
+					"response": []
+				},
+				{
+					"name": "Update User",
+					"request": {
+						"url": "http://localhost:9090/Users/19",
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"firstName\": \"Somnath\",\n    \"lastName\": \"Mukherjee\",\n    \"employeeId\": \"100015\",\n    \"projectId\": 1\n}"
+						},
+						"description": null
+					},
+					"response": []
+				},
+				{
+					"name": "Delete User",
+					"request": {
+						"url": "http://localhost:9090/Users/18",
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"description": null
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "fsd-project-manager-projects",
+			"description": "",
+			"item": [
+				{
+					"name": "Get All Project",
+					"request": {
+						"url": "http://localhost:9090/Projects",
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"Origin\": {\r\n    \"Code\": \"WLG\"\r\n  },\r\n  \"Destination\": {\r\n    \"Code\": \"XNA\"\r\n  },\r\n  \"DepartureDate\": \"2018-03-30\"\r\n}"
+						},
+						"description": null
+					},
+					"response": []
+				},
+				{
+					"name": "Get Project By Id",
+					"request": {
+						"url": "http://localhost:9090/Projects/1",
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"Origin\": {\r\n    \"Code\": \"WLG\"\r\n  },\r\n  \"Destination\": {\r\n    \"Code\": \"XNA\"\r\n  },\r\n  \"DepartureDate\": \"2018-03-30\"\r\n}"
+						},
+						"description": null
+					},
+					"response": []
+				},
+				{
+					"name": "Get Tasks By Project Id",
+					"request": {
+						"url": "http://localhost:9090/Projects/1/Tasks",
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"Origin\": {\r\n    \"Code\": \"WLG\"\r\n  },\r\n  \"Destination\": {\r\n    \"Code\": \"XNA\"\r\n  },\r\n  \"DepartureDate\": \"2018-03-30\"\r\n}"
+						},
+						"description": null
+					},
+					"response": []
+				},
+				{
+					"name": "Get Members By Project Id",
+					"request": {
+						"url": "http://localhost:9090/Projects/1/Members",
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"Origin\": {\r\n    \"Code\": \"WLG\"\r\n  },\r\n  \"Destination\": {\r\n    \"Code\": \"XNA\"\r\n  },\r\n  \"DepartureDate\": \"2018-03-30\"\r\n}"
+						},
+						"description": null
+					},
+					"response": []
+				},
+				{
+					"name": "Get Manager By Project Id",
+					"request": {
+						"url": "http://localhost:9090/Projects/1/Manager",
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"Origin\": {\r\n    \"Code\": \"WLG\"\r\n  },\r\n  \"Destination\": {\r\n    \"Code\": \"XNA\"\r\n  },\r\n  \"DepartureDate\": \"2018-03-30\"\r\n}"
+						},
+						"description": null
+					},
+					"response": []
+				},
+				{
+					"name": "Create Project",
+					"request": {
+						"url": "http://localhost:9090/Projects",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"summary\": \"The Ultimate Machine\",\n    \"description\": \"To implement a Turning Machine that can pass the Turing Test\",\n    \"startDate\": \"2019-01-01T00:00:00\",\n    \"endDate\": \"2019-12-31T00:00:00\",\n    \"priority\": \"Low\",\n    \"status\": \"NotStarted\",\n    \"managerId\": 16\n}"
+						},
+						"description": null
+					},
+					"response": []
+				},
+				{
+					"name": "Update Project",
+					"request": {
+						"url": "http://localhost:9090/Projects/1",
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"summary\": \"The Machine\",\n    \"description\": \"To implement a Turning Machine that can pass the Turing Test\",\n    \"startDate\": \"2018-01-01T00:00:00\",\n    \"endDate\": \"2018-12-31T00:00:00\",\n    \"priority\": \"High\",\n    \"status\": \"InProgress\",\n    \"managerId\": 14\n}"
+						},
+						"description": null
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Project",
+					"request": {
+						"url": "http://localhost:9090/Projects/2",
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"description": null
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

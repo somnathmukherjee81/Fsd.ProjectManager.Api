@@ -1,0 +1,31 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+ name: project-manager-api
+data:
+ HTTP_PORT: "9090"
+ HTTPS_PORT: "9091"
+ CERT_PATH: "/etc/secret-volume/fsd_capsule_projectmanager.pfx"
+ DB_TYPE: "SQLSERVER"
+ DB_CONNECTION_STRING: "Server=(localdb)\\mssqllocaldb;Database=ProjectManagerDb;Trusted_Connection=True;MultipleActiveResultSets=true"
+ DB_NAME: "ProjectManagerDb"
+ APP_INSIGHTS_KEY: ""
+---
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: project-manager-api
+  annotations:
+    ingress.kubernetes.io/secure-backends: "true"
+    kubernetes.io/ingress.class: ingress-fsd-project-manager-perf
+spec:
+  tls:
+  - hosts: 
+    - project-manager-api.fsd-project-manager-perf.com
+  rules:
+  - host: project-manager-api.fsd-project-manager-perf.com
+    http:
+      paths:
+      - backend:
+          serviceName: project-manager-api
+          servicePort: 443 
