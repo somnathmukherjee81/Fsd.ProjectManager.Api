@@ -5,7 +5,10 @@ This is the Web Api for adding, deleting, updating and retrieving *Projects*, *U
 
 ## Endpoints
 This channel service is available at the following endpoints:
- - At localhost: http://localhost:9090/Tasks
+ - At localhost: 
+   - http://localhost:9090/Projects
+   - http://localhost:9090/Tasks
+   - http://localhost:9090/Users
  - Development Environment: https://project-manager-api.fsd-project-manager-dev.com/
  - Swagger UI: https://project-manager-api.fsd-project-manager-dev.com/swagger/
  - Swagger Document: https://project-manager-api.fsd-project-manager-dev.com/swagger/v1/swagger.json
@@ -40,6 +43,18 @@ At the root of the project run
 ```
 dotnet test
 ```
+
+### Run performance tests
+
+At the root of the performance test project run
+
+```
+dotnet nbench
+```
+
+The performance test report can be found under the `PerfResults` directory of the performance test project, like:
+
+ ~\Fsd.ProjectManager.Api\src\Fsd.ProjectManager.Api.Benchmark\PerfResults\netcoreapp2.0\
 
 ### Publish the project output
 
